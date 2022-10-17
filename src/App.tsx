@@ -1,6 +1,6 @@
-import DarkModeButton from "components/atoms/darkModeButton";
-import GithubButton from "components/atoms/githubButton";
-import Layout from "components/templates/layout";
+import DarkModeButton from "./components/atoms/darkModeButton";
+import GithubButton from "./components/atoms/githubButton";
+import Layout from "./components/templates/layout";
 
 const App = () => {
   return (

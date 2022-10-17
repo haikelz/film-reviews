@@ -1,4 +1,4 @@
-import { Children } from "interfaces";
+import { Children } from "../../../interfaces";
 
 const Layout = ({ children }: Children) => {
   return (

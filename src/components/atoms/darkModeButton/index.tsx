@@ -1,4 +1,4 @@
-import { useTheme } from "hooks/useTheme";
+import { useTheme } from "../../../hooks/useTheme";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const DarkModeButton = () => {
