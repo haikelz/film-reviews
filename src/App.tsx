@@ -1,6 +1,6 @@
-import DarkModeButton from "./components/darkModeButton";
-import GithubButton from "./components/githubButton";
-import Layout from "./components/layout";
+import DarkModeButton from "components/atoms/darkModeButton";
+import GithubButton from "components/atoms/githubButton";
+import Layout from "components/templates/layout";
 
 const App = () => {
   return (
@@ -13,8 +13,8 @@ const App = () => {
           <img src="/vite.svg" alt="Vite logo" />
         </div>
         <p className="text-lg">
-          Another Vite Starter for building user interface with <u>ReactJS</u>,{" "}
-          <u>Typescript</u>, <u>TailwindCSS</u>, and <u>Jotai</u>.
+          Another Vite Starter with <u>ReactJS</u>, <u>Typescript</u>, <u>TailwindCSS</u>, and{" "}
+          <u>Jotai</u>.
         </p>
         <div className="flex gap-4 mt-3">
           <DarkModeButton />

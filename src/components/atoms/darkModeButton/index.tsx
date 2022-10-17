@@ -1,4 +1,4 @@
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "hooks/useTheme";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const DarkModeButton = () => {
@@ -10,11 +10,7 @@ const DarkModeButton = () => {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? "Light" : "Dark"} Mode{" "}
-      {theme === "dark" ? (
-        <MdOutlineLightMode size="20" />
-      ) : (
-        <MdOutlineDarkMode size="20" />
-      )}
+      {theme === "dark" ? <MdOutlineLightMode size="20" /> : <MdOutlineDarkMode size="20" />}
     </button>
   );
 };
