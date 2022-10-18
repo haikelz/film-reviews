@@ -12,4 +12,4 @@ Just click **Use this template**, or:
 - I'm using yarn, so if you use yarn too, just type `yarn install && yarn run dev`.
 - Go to `localhost:5173` and see the result.
 
-If you use other package manager like npm or pnpm, remember to remove `yarn.lock`.
+  If you use other package manager like npm or pnpm, remember to remove `yarn.lock`.

@@ -12,11 +12,7 @@ module.exports = {
       version: "detect",
     },
     "import/resolver": {
-      node: {
-        paths: ["src"],
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        moduleDirectory: ["node_modules", "src/"],
-      },
+      typescript: {},
     },
   },
   rules: {
