@@ -1,0 +1,25 @@
+{
+  "films": [
+    {
+      "image": "https://res.cloudinary.com/dxtjsbzwk/image/upload/v1670469587/film-reviews/natsume-no-yuujinchou_r8ihnz.jpg",
+      "name": "Natsume no Yuujinchou",
+      "genre": "Slice of Life, Supernatural",
+      "review": "Animenya bikin adem cui",
+      "id": 1
+    },
+    {
+      "image": "https://res.cloudinary.com/dxtjsbzwk/image/upload/v1670469582/film-reviews/wildlife_y1zw5q.jpg",
+      "name": "Wildlife Windows 7",
+      "genre": "Slice of Life, Nature",
+      "review": "Old sekaleehhh, Win 7 gang 😎☝️",
+      "id": 2
+    },
+    {
+      "image": "http://res.cloudinary.com/dxtjsbzwk/image/upload/v1670474480/film-reviews/ns5xhzfcdo2wbiayyim1.jpg",
+      "name": "Oregairu",
+      "genre": "Romance, School, Slice of Life",
+      "review": "Janji ga sedih liat Season 3? 😭😭",
+      "id": 3
+    }
+  ]
+}
