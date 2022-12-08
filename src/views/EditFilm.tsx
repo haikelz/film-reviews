@@ -1,18 +1,19 @@
+import { useCloudinary } from "@/hooks/useCloudinary";
 import { EntityState } from "@reduxjs/toolkit";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import Button from "../components/Button";
-import FormInput from "../components/FormInput";
-import Heading from "../components/Heading";
-import { getFilms, filmSelector, updateFilm } from "../store/slices/filmSlice";
-import { AppDispatch, PreventDefaultEvent, FilmEntity } from "../types";
+import { Button } from "../components/Button";
+import { FormInput } from "../components/FormInput";
+import { Heading } from "../components/Heading";
+import { filmSelector, getFilms, updateFilm } from "../store/slices/filmSlice";
+import { AppDispatch, FilmEntity, PreventDefaultEvent } from "../types";
 
 const EditFilm = () => {
   const [name, setName] = useState("");
   const [genre, setGenre] = useState("");
   const [review, setReview] = useState("");
-  const [image, setImage] = useState("");
+  const [, setImage] = useState({ name: "", url: "", format: "" });
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -32,25 +33,11 @@ const EditFilm = () => {
   const cloudinaryRef: any = useRef();
   const widgetRef: any = useRef();
 
+  const image = useCloudinary({ cloudinaryRef: cloudinaryRef, widgetRef: widgetRef });
+
   useEffect(() => {
     dispatch(getFilms());
   }, [dispatch]);
-
-  useEffect(() => {
-    cloudinaryRef.current = window.cloudinary;
-    widgetRef.current = cloudinaryRef.current.createUploadWidget(
-      {
-        cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME,
-        uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET,
-        folder: import.meta.env.VITE_CLOUDINARY_UPLOAD_FOLDER,
-      },
-      (error: unknown, result: { event: string; info: { url: string } }) => {
-        if (!error && result && result.event === "success") {
-          setImage(result.info.url);
-        }
-      }
-    );
-  }, []);
 
   useEffect(() => {
     if (film) {
@@ -68,11 +55,14 @@ const EditFilm = () => {
         <FormInput htmlForValue="name" label="Name" value={name} setValue={setName} />
         <FormInput htmlForValue="genre" label="Genre" value={genre} setValue={setGenre} />
         <FormInput htmlForValue="review" label="Review" value={review} setValue={setReview} />
-        <div className="space-x-2">
-          <Button color="red" type="button" onClick={() => widgetRef.current.open()}>
-            + Edit Image
-          </Button>
-          <Button type="submit">Edit</Button>
+        <div>
+          <p>{`${image.name}.${image.format}`}</p>
+          <div className="space-x-2 mt-4">
+            <Button color="red" type="button" onClick={() => widgetRef.current.open()}>
+              + Edit Image
+            </Button>
+            <Button type="submit">Edit</Button>
+          </div>
         </div>
       </form>
     </div>

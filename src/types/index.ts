@@ -11,7 +11,11 @@ export type PreventDefaultEvent = {
 
 export type FilmEntity = {
   id: string;
-  image: string;
+  image: {
+    name: string;
+    url: string;
+    format: string;
+  };
   name: string;
   genre: string;
   review: string;
@@ -41,4 +45,19 @@ export type FormInputProps = {
   label: string;
   value: string;
   setValue: Dispatch<SetStateAction<string>>;
+};
+
+export type Result = {
+  event: string;
+  info: {
+    original_filename: string;
+    url: string;
+    path: string;
+    format: string;
+  };
+};
+
+export type CloudinaryProps = {
+  cloudinaryRef: any;
+  widgetRef: any;
 };

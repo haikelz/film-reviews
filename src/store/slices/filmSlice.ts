@@ -1,16 +1,10 @@
-import {
-  createAsyncThunk,
-  createEntityAdapter,
-  createSlice,
-} from "@reduxjs/toolkit";
+import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosResponse } from "axios";
 import { FilmEntity, FilmSelector } from "../../types";
 
 // getFilms -> untuk menampilkan semua data yang ada
 export const getFilms = createAsyncThunk("films/getFilms", async () => {
-  const response: AxiosResponse = await axios.get(
-    "http://localhost:5000/films"
-  );
+  const response: AxiosResponse = await axios.get("http://localhost:5000/films");
   return response.data;
 });
 
@@ -23,32 +17,26 @@ export const saveFilm = createAsyncThunk(
     genre,
     review,
   }: {
-    image: string;
+    image: { name: string; url: string; format: string };
     name: string;
     genre: string;
     review: string;
   }) => {
-    const response: AxiosResponse = await axios.post(
-      "http://localhost:5000/films",
-      {
-        image,
-        name,
-        genre,
-        review,
-      }
-    );
+    const response: AxiosResponse = await axios.post("http://localhost:5000/films", {
+      image,
+      name,
+      genre,
+      review,
+    });
     return response.data;
   }
 );
 
 // deleteFilm
-export const deleteFilm = createAsyncThunk(
-  "films/deleteFilm",
-  async (id: string) => {
-    await axios.delete(`http://localhost:5000/films/${id}`);
-    return id;
-  }
-);
+export const deleteFilm = createAsyncThunk("films/deleteFilm", async (id: string) => {
+  await axios.delete(`http://localhost:5000/films/${id}`);
+  return id;
+});
 
 // updateFilm
 export const updateFilm = createAsyncThunk(
@@ -61,15 +49,17 @@ export const updateFilm = createAsyncThunk(
     review,
   }: {
     id: string | undefined;
-    image: string;
+    image: { name: string; url: string; format: string };
     name: string;
     genre: string;
     review: string;
   }) => {
-    const response: AxiosResponse = await axios.patch(
-      `http://localhost:5000/films/${id}`,
-      { image, name, genre, review }
-    );
+    const response: AxiosResponse = await axios.patch(`http://localhost:5000/films/${id}`, {
+      image,
+      name,
+      genre,
+      review,
+    });
     return response.data;
   }
 );
@@ -105,7 +95,5 @@ const filmSlice = createSlice({
 });
 
 // filmSelector
-export const filmSelector = filmEntity.getSelectors<FilmSelector>(
-  (state) => state.film
-);
+export const filmSelector = filmEntity.getSelectors<FilmSelector>((state) => state.film);
 export default filmSlice.reducer;

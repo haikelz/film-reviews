@@ -1,4 +1,4 @@
-const TableHead = () => {
+export const TableHead = () => {
   return (
     <thead className="text-gray-700 uppercase bg-gray-100">
       <tr>
@@ -12,5 +12,3 @@ const TableHead = () => {
     </thead>
   );
 };
-
-export default TableHead;

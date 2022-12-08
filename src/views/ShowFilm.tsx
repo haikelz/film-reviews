@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
-import Heading from "../components/Heading";
-import TableBody from "../components/TableBody";
-import TableHead from "../components/TableHead";
+import { Button } from "../components/Button";
+import { Heading } from "../components/Heading";
+import { TableBody } from "../components/TableBody";
+import { TableHead } from "../components/TableHead";
 import { filmSelector, getFilms } from "../store/slices/filmSlice";
-import { AppDispatch } from "../types";
+import { AppDispatch, FilmEntity } from "../types";
 
 const ShowFilm = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const films = useSelector(filmSelector.selectAll);
+  const films: FilmEntity[] = useSelector(filmSelector.selectAll);
 
   useEffect(() => {
     dispatch(getFilms());
@@ -22,7 +22,7 @@ const ShowFilm = () => {
       {films.length ? (
         <>
           <Link to="/add">
-            <Button type="button">Add Product</Button>
+            <Button type="button">+ Add New Film</Button>
           </Link>
           <table className="w-full mt-4 table-fixed shadow-md text-base text-left text-gray-500">
             <TableHead />

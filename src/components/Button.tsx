@@ -1,6 +1,6 @@
 import { ButtonProps } from "../types";
 
-const Button = ({ color, type, children, onClick, ...props }: ButtonProps) => {
+export const Button = ({ color, type, children, onClick, ...props }: ButtonProps) => {
   switch (color) {
     case "red":
       color = "bg-red-400 hover:bg-red-500";
@@ -8,6 +8,7 @@ const Button = ({ color, type, children, onClick, ...props }: ButtonProps) => {
 
     default:
       color = "bg-blue-500 hover:bg-blue-600";
+      break;
   }
 
   return (
@@ -21,5 +22,3 @@ const Button = ({ color, type, children, onClick, ...props }: ButtonProps) => {
     </button>
   );
 };
-
-export default Button;

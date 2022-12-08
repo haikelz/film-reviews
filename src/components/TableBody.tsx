@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { deleteFilm } from "../store/slices/filmSlice";
 import { TableBodyProps } from "../types";
-import Button from "./Button";
+import { Button } from "./Button";
 
-const TableBody = ({ films, dispatch }: TableBodyProps) => {
+export const TableBody = ({ films, dispatch }: TableBodyProps) => {
   return (
     <tbody>
       {films.map((film, index) => (
         <tr className="bg-white border-b-2 border-b-gray-200" key={film.id}>
           <td className="py-3 px-6 font-semibold">{index + 1}</td>
           <td className="py-3 px-6 font-semibold">
-            <img className="rounded-md" src={film.image} alt="" />
+            <img className="rounded-md" src={film.image.url} alt="" />
           </td>
           <td className="py-3 px-6 font-semibold">{film.name}</td>
           <td className="py-3 px-6 font-semibold">{film.genre}</td>
@@ -32,5 +32,3 @@ const TableBody = ({ films, dispatch }: TableBodyProps) => {
     </tbody>
   );
 };
-
-export default TableBody;
