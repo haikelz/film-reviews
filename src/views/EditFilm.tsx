@@ -14,9 +14,13 @@ const EditFilm = () => {
   const [genre, setGenre] = useState("");
   const [review, setReview] = useState("");
   const [, setImage] = useState({ name: "", url: "", format: "" });
+  const { id } = useParams();
+
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const { id } = useParams();
+  const cloudinaryRef: any = useRef();
+  const widgetRef: any = useRef();
+  const image = useCloudinary({ cloudinaryRef: cloudinaryRef, widgetRef: widgetRef });
 
   const film = useSelector((state: { film: EntityState<FilmEntity> }) =>
     filmSelector.selectById(state, id === undefined ? "" : id)
@@ -29,11 +33,6 @@ const EditFilm = () => {
     // ketika data berhasil diupdate, maka redirect ke halaman home
     navigate("/");
   };
-
-  const cloudinaryRef: any = useRef();
-  const widgetRef: any = useRef();
-
-  const image = useCloudinary({ cloudinaryRef: cloudinaryRef, widgetRef: widgetRef });
 
   useEffect(() => {
     dispatch(getFilms());
@@ -56,7 +55,7 @@ const EditFilm = () => {
         <FormInput htmlForValue="genre" label="Genre" value={genre} setValue={setGenre} />
         <FormInput htmlForValue="review" label="Review" value={review} setValue={setReview} />
         <div>
-          <p>{`${image.name}.${image.format}`}</p>
+          <p>{image.name === "no-image" ? null : `${image.name}.${image.format}`}</p>
           <div className="space-x-2 mt-4">
             <Button color="red" type="button" onClick={() => widgetRef.current.open()}>
               + Edit Image

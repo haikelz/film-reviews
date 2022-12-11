@@ -10,12 +10,7 @@
 - React JS
 - Tailwind CSS
 - Redux Toolkit
-
-## TODO
-
-- Opsi Nambahin foto di setiap film, kalo nggak ditambahin foto maka akan memakai foto default.
-- Ngatur responsive table.
-- Nambahin opsi edit image juga.
+- Cloudinary
 
 ## Setup
 
@@ -23,3 +18,4 @@
 - Masuk ke folder project `cd film-reviews`.
 - Project ini menggunakan `json-server`. Jika kamu belum menginstallnya, silahkan install secara global `npm install -g json-server`. Setelah terinstall, silahkan jalankan perintah `json-server -w src/utils/data.json -p 5000`.
 - Untuk menginstall semua dependencies sekaligus menjalankan dev server, silahkan ketik `yarn install && yarn run dev` dan lihat hasilnya di browser => `http://localhost:3000`.
+- Untuk pengelolaan gambar, silahkan masuk ke akun Cloudinary, dan copy **Cloud Name** dan **Upload Preset**, kemudian isikan ke `.env.local`(untuk contoh, silahkan lihat di file `.env.example`). Jangan lupa untuk menspesifikasikan folder yang ingin dipakai.

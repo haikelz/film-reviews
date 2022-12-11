@@ -2,13 +2,13 @@
   "films": [
     {
       "image": {
-        "name": "Natsume no Yuujinchou",
-        "url": "https://res.cloudinary.com/dxtjsbzwk/image/upload/v1670469587/film-reviews/natsume-no-yuujinchou_r8ihnz.jpg",
+        "name": "ryuko",
+        "url": "http://res.cloudinary.com/dxtjsbzwk/image/upload/v1670726800/film-reviews/sam3bqgjn9grytivifel.jpg",
         "format": "jpg"
       },
-      "name": "Natsume no Yuujinchou",
-      "genre": "Slice of Life, Supernatural",
-      "review": "Animenya bikin adem cui",
+      "name": "Kill La Kill",
+      "genre": "Action, Comedy",
+      "review": "Boleh juga",
       "id": 1
     },
     {
@@ -24,25 +24,14 @@
     },
     {
       "image": {
-        "name": "Oregairu",
-        "url": "http://res.cloudinary.com/dxtjsbzwk/image/upload/v1670474480/film-reviews/ns5xhzfcdo2wbiayyim1.jpg",
+        "name": "Natsume no Yuujinchou",
+        "url": "https://res.cloudinary.com/dxtjsbzwk/image/upload/v1670469587/film-reviews/natsume-no-yuujinchou_r8ihnz.jpg",
         "format": "jpg"
       },
-      "name": "Oregairu",
-      "genre": "Romance, School, Slice of Life",
-      "review": "Janji ga sedih liat Season 3? 😭😭",
+      "name": "Natsume no Yuujinchou",
+      "genre": "Slice of Life, Supernatural",
+      "review": "Animenya bikin adem cui",
       "id": 3
-    },
-    {
-      "image": {
-        "name": "natsume-no-yuujinchou",
-        "url": "http://res.cloudinary.com/dxtjsbzwk/image/upload/v1670509546/film-reviews/krxrpfaztaad11jjwf4n.jpg",
-        "format": "jpg"
-      },
-      "name": "123",
-      "genre": "123",
-      "review": "123123213123",
-      "id": 4
     }
   ]
 }

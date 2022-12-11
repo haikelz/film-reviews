@@ -14,12 +14,9 @@ const AddProduct = () => {
   const [review, setReview] = useState("");
 
   const navigate: NavigateFunction = useNavigate();
-
   const cloudinaryRef: any = useRef();
   const widgetRef: any = useRef();
-
   const dispatch = useDispatch<AppDispatch>();
-
   const image = useCloudinary({ cloudinaryRef: cloudinaryRef, widgetRef: widgetRef });
 
   const createFilm = async (event: PreventDefaultEvent) => {
@@ -37,7 +34,7 @@ const AddProduct = () => {
         <FormInput htmlForValue="genre" label="Genre" value={genre} setValue={setGenre} />
         <FormInput htmlForValue="review" label="Review" value={review} setValue={setReview} />
         <div>
-          <p>{`${image.name}.${image.format}`}</p>
+          <p>{image.name === "no-image" ? null : `${image.name}.${image.format}`}</p>
           <div className="space-x-2 mt-4">
             <Button color="red" type="button" onClick={() => widgetRef.current.open()}>
               + Upload Image

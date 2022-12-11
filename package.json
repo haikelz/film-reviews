@@ -6,16 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "a": "",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@apollo/server": "^4.2.2",
     "@cloudinary/react": "^1.6.0",
     "@cloudinary/url-gen": "^1.8.7",
     "@reduxjs/toolkit": "^1.9.1",
     "@types/node": "^18.11.0",
     "axios": "^1.2.1",
+    "graphql": "^16.6.0",
     "jotai": "^1.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
